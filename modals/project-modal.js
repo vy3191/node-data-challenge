@@ -12,6 +12,7 @@ async function findById(id) {
 
 async function addProject(newProject) {
    const [id] = await db("projects").insert(newProject);
+   console.log(id);
    return await db("projects").where("id",id).first();
 };
 
