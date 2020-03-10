@@ -23,6 +23,17 @@ router.get("/:id", async (req,res,next) => {
   }
 });
 
+router.get("/:id/tasks-resources", async (req,res,next) =>{
+   try {
+     console.log(req.params.id);
+     const allDetails = await projectsModal.getAllDetails(req.params.id);
+     console.log(allDetails)
+     res.status(200).json(allDetails);
+   }catch(err){
+     next(err);
+   }
+});
+
 router.post("/", async (req,res,next) => {
   try{
     const newProject = {
