@@ -29,7 +29,8 @@ router.post("/", async (req,res,next) => {
       name:req.body.name,
       description:req.body.description
     }   
-    if(!req.body.name) res.status(400) .json({msg:'Name is missing'});
+    console.log(newProject)
+    if(!req.body.name) res.status(400).json({msg:'Name is missing'});
     if(!req.body.description) res.status(400).json({msg:'Description is missing'});
     const addedProject = await projectsModal.addProject(newProject);
     res.status(201).json(addedProject);
