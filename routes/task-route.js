@@ -23,7 +23,15 @@ router.post("/", async (req,res,next) => {
 router.get("/", async (req,res,next) => {
    try{
      const tasks = await taskModal.findTasks();
-     res.status(200).json(tasks);
+     const mappedTasks = tasks.map( (task) => {
+      if(task.completed === 1) {
+          task.completed = true;
+      } else {
+          task.completed = false;
+      }
+      return task;
+  })
+     res.status(200).json(mappedTasks);
    }catch(err) {
      next(err);
    }
