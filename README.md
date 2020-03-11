@@ -39,12 +39,16 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
+ Ans: Relational databases are the databases that the tables are linked with primary keys and foreign keys. Where are SQL is the query language that is used manage the Relational Databases.
 
 - [ ] Why do tables need a `primary key`?
+Ans: In order to normalize the database we need primary key. Which eventually removes the duplication in the database.
 
 - [ ] What is the name given to a table column that references the primary key on another table.
+Ans: foreing key 
 
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
+Ans: We need to have a relational intermediate table holding the body primary keys from both tables..
 
 ## Minimum Viable Product
 
@@ -62,7 +66,7 @@ Complete the following tasks:
   - [ ] when adding a `task` the client must provide a description, the notes are optional.
   - [ ] when adding a `task` the client must provide the `id` of an existing project.
   - [ ] for `projects` and `tasks` if no value is provided for the `completed` property, the API should provide a default value of `false`.
-- [ ] Build an API with endpoints for:
+  - [ ] Build an API with endpoints for:
   - [ ] adding resources.
   - [ ] retrieving a list of resources.
   - [ ] adding projects.
