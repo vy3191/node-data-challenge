@@ -28,7 +28,7 @@ async function getAllDetails(id) {
   const resources = await db("resources as r")
                            .join("projects_resources as pr", "pr.resource_id", "r.id")
                            .where({"pr.project_id": id}) 
-                           .select("r.id as Resource ID", "r.name as Resouce Name", "r.description as Description");
+                           .select("r.id as Resource ID", "r.name as Resource Name", "r.description as Description");
                            
   return { ...projects, tasks, resources};                            
 }
